@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText name, contact, dob;
-    Button insert,update,delete,view;
+    Button insert,update,delete,view, check;
 
     DBhelper DB;
     @Override
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         delete = findViewById(R.id.btndelete);
         update = findViewById(R.id.btnupdate);
         view = findViewById(R.id.btnview);
+        check = findViewById(R.id.btncheck);
 
         DB = new DBhelper(this);
 
@@ -93,6 +94,20 @@ public class MainActivity extends AppCompatActivity {
                 builder.setTitle("user entries");
                 builder.setMessage(buffer.toString());
                 builder.show();
+            }
+        });
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nameTXT = name.getText().toString();
+                String contactTXT = contact.getText().toString();
+
+                Boolean check = DB.checklogin(nameTXT,contactTXT);
+                if (check==true){
+                    Toast.makeText(MainActivity.this, "Sukses", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "Salah", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -62,4 +62,21 @@ public class DBhelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         return DB.rawQuery("select * from userdetails", null);
     }
+    public boolean checklogin(String name, String contact){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("contact", contact);
+        Cursor cursor = DB.rawQuery("SELECT * FROM userdetails WHERE name=? AND contact=?", new String[]{name, contact});
+        if (cursor.getCount() > 0) {
+            // User with the provided name exists, you can check contact if needed
+            // For now, let's assume contact checking is not necessary
+            cursor.close();
+            return true;
+        } else {
+            // User does not exist or some other issue occurred
+            cursor.close();
+            return false;
+        }
+    }
 }
