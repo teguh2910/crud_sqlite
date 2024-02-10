@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".login">
+<TextView
+    android:id="@+id/header_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Silahkan Login \n Medzos Anak UNSIA"
+    android:textAlignment="center"
+    android:textSize="40dp"
+    />
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_title"
+        android:hint="Username"
+        android:inputType="text"
+        android:textSize="20dp"
+        />
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textSize="20dp"
+        />
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:text="Login"
+        android:textSize="30dp"
+        />
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnlogin"
+        android:text="Register"
+        android:textSize="30dp"
+        />
+</RelativeLayout>

@@ -96,20 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 builder.show();
             }
         });
-        check.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String nameTXT = name.getText().toString();
-                String contactTXT = contact.getText().toString();
-
-                Boolean check = DB.checklogin(nameTXT,contactTXT);
-                if (check==true){
-                    Toast.makeText(MainActivity.this, "Sukses", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Salah", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
 
