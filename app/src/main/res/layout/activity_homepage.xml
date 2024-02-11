@@ -7,10 +7,67 @@
     android:padding="10dp"
     tools:context=".homepage">
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:text="WELCOME"
         android:textAlignment="center"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome"
+        android:text="Nama Pengguna"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        />
+    <Button
+        android:id="@+id/edit_pengguna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:text="Edit Profil"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        />
+    <Button
+        android:id="@+id/posting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_pengguna"
+        android:text="Tambah Posting"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        />
+    <Button
+        android:id="@+id/view_posting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/posting"
+        android:text="View Posting"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        />
+    <Button
+        android:id="@+id/list_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_posting"
+        android:text="List User"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        />
+    <Button
+        android:id="@+id/grub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_user"
+        android:text="Grub / Channel"
+        android:textStyle="italic"
+        android:textSize="25dp"
         />
 </RelativeLayout>

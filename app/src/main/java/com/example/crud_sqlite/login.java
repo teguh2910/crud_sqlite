@@ -8,10 +8,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 public class login extends AppCompatActivity {
     Button btnlogin,register;
     EditText username,password;
     DBhelper DB;
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,14 +25,16 @@ public class login extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         DB = new DBhelper(this);
+        sessionManager = new SessionManager(this);
 
         btnlogin.setOnClickListener(v -> {
             String usernameTXT = username.getText().toString();
             String passwordTXT = password.getText().toString();
+            sessionManager.setUsername(usernameTXT);
             boolean check = DB.checklogin(usernameTXT,passwordTXT);
             if (check==true){
                 Toast.makeText(login.this, "Sukses", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(login.this, MainActivity.class);
+                Intent intent = new Intent(login.this, homepage.class);
                 startActivity(intent);
                 finish();
             }else{

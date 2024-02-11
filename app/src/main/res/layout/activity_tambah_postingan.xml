@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".tambah_postingan">
+<TextView
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Tambah Postingan"
+    android:textAlignment="center"
+    android:textStyle="bold"
+    android:textSize="30sp"
+    />
+    <EditText
+        android:id="@+id/judul_postingan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:hint="Judul Postingan"
+        android:textSize="20dp"
+        />
+
+        <EditText
+            android:id="@+id/isi_postingan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/judul_postingan"
+            android:hint="Tulis Postingan Anda"
+            android:inputType="textMultiLine"
+            android:minLines="10"
+            android:gravity="start|top"
+            android:scrollbars="vertical" />
+    <Button
+        android:id="@+id/posting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/isi_postingan"
+        android:text="Posting NOW"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/posting"
+        android:text="Back To Homepage"
+        android:textSize="20sp"
+        />
+</RelativeLayout>
